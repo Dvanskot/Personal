@@ -1,0 +1,45 @@
+TD, P {
+font-size: 11px;
+font-family:Verdana,Arial, Helvetica, sans-serif;
+font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-decoration: none;
+vertical-align: center;
+}
+
+TD.highlight {
+background-color: #CCCCCC;
+font-weight: bold;
+font-color: #999999;
+}
+
+TR.background {
+background-color: #CCCCCC;
+}
+
+TR {
+background-color: #FFFFFF;
+}
+
+A:link {
+text-decoration : none;
+color: Navy;
+}
+
+A:visited {
+text-decoration:none;
+color: CC0000;
+
+}
+
+
+A:HOVER {
+color : CC0000;
+}
+
+
+INPUT,SELECT { 
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+border-top-width:1px;
+border-left-width:1px;
+
+}
