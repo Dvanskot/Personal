@@ -167,8 +167,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`username`, `email`, `password`, `country`, `act_code`, `is_active`, `is_ban`, `is_admin`, `validation`, `date_created`, `date_lastlogin`, `cellnum`, `postalAddr`, `fullname`) VALUES
-('dakalo@gmail.com', 'dakalo@gmail.com', '71e8afeb3f980ecc4d4b9d886e3a543c', 'South Africa', 7960, 1, 0, 0, '0451bfaf87ea00b20588bfadc69e8323', '2013-05-07T19:52:59+02:00', '2013-05-07T19:52:59+02:00', '0793607129', 'P.O.Box 23\r\nSibasa\r\n0970', 'Dakalo Nemaangnai'),
-('kg@gmail.com', 'kg@gmail.com', 'KG123t', 'South Africa', 1962, 1, 0, 0, '0451bfaf87ea00b20588bfadc69e8323', '2014-05-03', '', '0797877838', '124 The Ochards, Pretoria North 0052', 'Thangoane Katlego');
+('lancelot@gmail.com', 'Lance@gmail.com', '71e8afeb3f980ecc4d4b9d886e3a543c', 'South Africa', 7960, 1, 0, 0, '0451bfaf87ea00b20588bfadc69e8323', '2014-05-08', '2014-03-04', '0810747099', 'P.O.Box 1423\r\nMakhado\r\n0960', 'Lancelot Fhatuwani Tshikota'),
+('kg@gmail.com', 'kg@gmail.com', 'KG123t', 'South Africa', 1962, 1, 0, 0, '0451bfaf87ea00b20588bfadc69e8323', '2014-05-03', '', '0810747099', '124 The Ochards, Pretoria North 0052', 'Lancelot Tshikota');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
