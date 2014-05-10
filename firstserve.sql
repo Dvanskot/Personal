@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2013 at 03:05 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: May 09, 2014 at 04:41 PM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -40,15 +40,16 @@ CREATE TABLE IF NOT EXISTS `books` (
   `book_release` varchar(40) NOT NULL,
   `book_purchase` int(11) NOT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `books`
 --
 
 INSERT INTO `books` (`book_id`, `book_name`, `cat_id`, `book_price`, `book_isbn`, `book_author`, `book_theme`, `book_date`, `book_filename`, `book_icon`, `book_release`, `book_purchase`) VALUES
-(1, 'Mini Market', 2, 230, '1943-4343-3453-3n35', 'Dakalo Credence DC', 'Financial Education', '2013-05-07', 'mini_market.pdf', 'mini_market.jpg', '2012', 0),
-(3, 'Journey to Life', 1, 120, '232-3434-3434-3443', 'Dakalo Credence', 'Inspiration', '2013-05-08T20:19:27+02:00', '8257Unisa.pdf', '3246DakaloCredenceBlue2.jpg', '2013', 0);
+(1, 'PHP5 and MYSQL Bible', 2, 460, '1943-4343-3453-3n35', 'KG', 'Internet Programming', '2014-05-07', 'php.pdf', 'php.jpg', '2012', 0),
+(3, 'Java Programming', 1, 120, '232-3434-3434-3443', 'Joyce Farrel', 'Programming', '2014-05-08T20:19:27+02:00', 'Java+Programming+-+Joyce+Farrel.pdf', 'java.jpg', '2011', 0),
+(4, 'The Official Ubuntu Book', 4, 578.99, '01-330-17-N605', 'Matthew Helmke,  Amber Graner,  Kyle Rankin', 'Computers', '2014-05-06', 'The Official Ubuntu Book, 7th Edition.pdf', 'ubuntu.jpg', '2010', 0);
 
 -- --------------------------------------------------------
 
@@ -61,15 +62,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `book_id` int(11) NOT NULL,
   `cust_id` varchar(255) NOT NULL,
   PRIMARY KEY (`cart_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `book_id`, `cust_id`) VALUES
-(8, 1, 'dakalo@gmail.com'),
-(9, 3, 'dakalo@gmail.com');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -90,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_name`, `cat_desc`, `cat_date`) VALUES
-(1, 'Education and Reference', 'Educational books for use by educational instituations from pre-school books to university books', '2013-05-08'),
-(2, 'Children', 'Books written for children and parents like bed time story books and kids poetry', '2013-05-08');
+(1, 'Education', 'Educational books for use by Tertiary instituations.', '2014-05-02'),
+(2, 'Knowledge', 'This category provides books for every sphere of life.', '2014-05-05');
 
 -- --------------------------------------------------------
 
@@ -108,15 +101,7 @@ CREATE TABLE IF NOT EXISTS `download` (
   `down_number` int(11) NOT NULL,
   `trans_id` int(11) NOT NULL,
   PRIMARY KEY (`down_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `download`
---
-
-INSERT INTO `download` (`down_id`, `cust_id`, `down_code`, `book_filename`, `down_date`, `down_number`, `trans_id`) VALUES
-(3, 'dakalo@gmail.com', 95147, 'mini_market.pdf', '2013-05-11T12:56:05+02:00', 2, 5),
-(4, 'dakalo@gmail.com', 38448, '8257Unisa.pdf', '2013-05-11T12:56:05+02:00', 1, 5);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -151,14 +136,7 @@ CREATE TABLE IF NOT EXISTS `transaction` (
   `trans_numbooks` int(11) NOT NULL,
   `trans_date` varchar(30) NOT NULL,
   PRIMARY KEY (`trans_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `transaction`
---
-
-INSERT INTO `transaction` (`trans_id`, `cust_id`, `trans_numbooks`, `trans_date`) VALUES
-(5, 'dakalo@gmail.com', 2, '2013-05-11T12:56:05+02:00');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 -- --------------------------------------------------------
 
@@ -190,9 +168,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`username`, `email`, `password`, `country`, `act_code`, `is_active`, `is_ban`, `is_admin`, `validation`, `date_created`, `date_lastlogin`, `cellnum`, `postalAddr`, `fullname`) VALUES
 ('dakalo@gmail.com', 'dakalo@gmail.com', '71e8afeb3f980ecc4d4b9d886e3a543c', 'South Africa', 7960, 1, 0, 0, '0451bfaf87ea00b20588bfadc69e8323', '2013-05-07T19:52:59+02:00', '2013-05-07T19:52:59+02:00', '0793607129', 'P.O.Box 23\r\nSibasa\r\n0970', 'Dakalo Nemaangnai'),
-('nemaangani@gmail.com', 'nemaangani@gmail.com', '71e8afeb3f980ecc4d4b9d886e3a543c', 'South Africa', 13284, 1, 0, 1, '211a1b37b2db71aa38e72bbf802a3a00', '2013-05-08T11:04:16+02:00', '2013-05-08T11:04:16+02:00', '0793607129', 'P.O.Box 453\r\nPretoria\r\n0002', 'Dakalo Nemaangnai'),
-('freedom@gmail.com', 'freedom@gmail.com', 'd5aa1729c8c253e5d917a5264855eab8', 'Haiti', 71119, 1, 0, 0, 'f33a233ff4d49946ee10baf91ae35468', '2013-05-08T12:20:14+02:00', '2013-05-08T12:20:14+02:00', '02265687876', 'Private Bag x45\r\nHaiti Capital', 'Freedom Parker'),
-('admin@firstserve.co.za', 'admin@firstserve.co.za', '21232f297a57a5a743894a0e4a801fc3', 'South Africa', 51255, 1, 0, 1, '71257f682f6411ed2ce707cc3bae6bc8', '2013-05-11T08:35:36+02:00', '2013-05-11T08:35:36+02:00', '0126537892', 'Private Bag X34\r\nPretoria\r\n0001', 'Dakalo Credence');
+('kg@gmail.com', 'kg@gmail.com', 'KG123t', 'South Africa', 1962, 1, 0, 0, '0451bfaf87ea00b20588bfadc69e8323', '2014-05-03', '', '0797877838', '124 The Ochards, Pretoria North 0052', 'Thangoane Katlego');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
